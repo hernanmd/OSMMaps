@@ -1,0 +1,1 @@
+I test the OSMTile class, verifying tile creation from coordinates, tile size, and tilesAround queries.

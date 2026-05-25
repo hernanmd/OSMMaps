@@ -1,7 +1,5 @@
-bitmap
+accessing
 image
-	^image ifNil: [ 
-		Transcript cr; show: 'Downloading tile...'.
-		image := ZnEasy getPng: (self source urlForTile: self).
-		Transcript show: 'Done'.
-		image].
+	"Answer the Form image for this tile, using the two-tier cache. Answer a Form"
+
+	^ image ifNil: [ image := OSMTileCache default formForTile: self ]

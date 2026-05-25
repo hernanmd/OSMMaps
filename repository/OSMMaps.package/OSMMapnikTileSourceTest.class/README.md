@@ -1,0 +1,1 @@
+I test the OSMMapnikTileSource class, verifying correct URL construction for OSM tile downloads.

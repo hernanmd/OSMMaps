@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "OSMMaps-Downloader",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"tiles",
+		"cache",
+		"pendingForms",
+		"workerProcess",
+		"completedCount"
+	],
+	"name" : "OSMTileDownloader",
+	"type" : "normal"
+}
