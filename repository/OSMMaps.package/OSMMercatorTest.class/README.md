@@ -1,0 +1,1 @@
+I test the OSMMercator projection class, verifying forward and inverse coordinate conversions between geographic coordinates and pixel space.

@@ -1,6 +1,6 @@
-converting
-pixelsFromLongitude: longitude zoomLevel: zoomLevel 
-	| maxPixel xLongitude |
-	maxPixel := self maxPixelForZoomLevel: zoomLevel.
-   xLongitude := (maxPixel * (longitude + 180)) / 360.
-   ^xLongitude min: (maxPixel - 1).
+projection
+pixelsFromLongitude: longitude zoomLevel: zoomLevel
+	"Convert longitude to pixel X coordinate using Mercator projection. longitude - Number (degrees), zoomLevel - Integer"
+
+	^ longitude + 180.0 / 360.0
+	  * (self maxPixelForZoomLevel: zoomLevel) asFloat

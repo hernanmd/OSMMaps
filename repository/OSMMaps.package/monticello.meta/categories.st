@@ -1,3 +1,1 @@
-SystemOrganization addCategory: #OSMMaps!
-SystemOrganization addCategory: 'OSMMaps-Core'!
-SystemOrganization addCategory: 'OSMMaps-Tests'!
+self packageOrganizer ensurePackage: #'OSMMaps-Tests' withTags: #(#Core)!

@@ -1,7 +1,1 @@
-An OSMTile is the representation of a tile in a map.
-
-It is defined by its x, y and zoomLevel. x and y are not expressed as lat-long coordinates but as row and column in a Mercator projection. 
-
-You can try the example:
-
-OSMTile monsExample.
+I represent a single OpenStreetMap tile identified by x, y coordinates and a zoom level. I know how to lazily download my image from the OSM tile server and can compute the set of tiles surrounding me within a given radius. I hold the downloaded image Form. See my class-side monsExample for a complete Roassal3 visualization of the City of Mons.

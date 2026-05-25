@@ -1,18 +1,9 @@
-converting
-pixelsFromLatitude: aLatitude zoomLevel: zoomLevel 
-	| sinLat log maxPixel yPixel |
-	"See LatToY from OsmMercator.java"
-	
-	"MercatorWeb works in the -85° to 85° range"
-	aLatitude < self minLatitude
-		ifTrue: [ aLatitude := self minLatitude ].
-		
-	aLatitude > self maxLatitude
-		ifTrue: [ aLatitude := self maxLatitude ].
-	
-	sinLat := aLatitude degreesToRadians sin.
-	log := ((1 + sinLat) / (1 - sinLat)) ln.
-	maxPixel := self maxPixelForZoomLevel: zoomLevel.
-	yPixel := maxPixel * (0.5 - (log / (4.0 *  Float pi))).
+projection
+pixelsFromLatitude: latitude zoomLevel: zoomLevel
+	"Convert latitude to pixel Y coordinate using Web Mercator projection. latitude - Number (degrees), zoomLevel - Integer"
 
-	 ^ yPixel min: (maxPixel - 1).
+	| latRad limit |
+	limit := latitude min: self maxLatitude max: self minLatitude.
+	latRad := limit degreesToRadians.
+	^ 1.0 - ((latRad tan + (1.0 / latRad cos)) ln / Float pi) / 2.0
+	  * (self maxPixelForZoomLevel: zoomLevel) asFloat

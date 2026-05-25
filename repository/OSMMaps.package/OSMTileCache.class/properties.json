@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "2026-05-25T12:01:00.772612-03:00",
+	"super" : "Object",
+	"category" : "OSMMaps-Cache",
+	"classinstvars" : [
+		"defaultInstance"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"memoryCache",
+		"diskDirectory",
+		"hitCount",
+		"missCount"
+	],
+	"name" : "OSMTileCache",
+	"type" : "normal"
+}

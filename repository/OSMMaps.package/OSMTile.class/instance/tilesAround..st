@@ -1,22 +1,16 @@
-accessing
+querying
 tilesAround: radius
+	"Answer all OSMTile instances surrounding the receiver within the given radius. radius - Integer (number of tiles in each direction)"
+
 	| neighbourhood startingX startingY |
-	"this returns all the tiles that are around self.
-	The radius is expressed in number of tiles"
-	
-	"Bound checking"
-	startingX := (x - radius) max: 0.
-	startingY := (y - radius) max: 0.
-	
-	self flag: #todo. "upper bound checking"
-	
+	startingX := x - radius max: 0.
+	startingY := y - radius max: 0.
+	self flag: #todo.
 	neighbourhood := OrderedCollection new.
 	(startingY to: y + radius) do: [ :yIndex |
-		(startingX to: x + radius) do: [:xIndex |
-			neighbourhood add: (OSMTile new
-				x: xIndex;
-				y: yIndex;
-				zoomLevel: zoomLevel)]].
-
-	^neighbourhood.
-	
+			(startingX to: x + radius) do: [ :xIndex |
+					neighbourhood add: (OSMTile new
+							 x: xIndex;
+							 y: yIndex;
+							 zoomLevel: zoomLevel) ] ].
+	^ neighbourhood

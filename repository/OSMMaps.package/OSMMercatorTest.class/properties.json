@@ -1,14 +1,11 @@
 {
-	"category" : "OSMMaps-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
-	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "OSMMercatorTest",
-	"pools" : [
-		 ],
+	"commentStamp" : "<historical>",
 	"super" : "TestCase",
-	"type" : "normal" }
+	"category" : "OSMMaps-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OSMMercatorTest",
+	"type" : "normal"
+}

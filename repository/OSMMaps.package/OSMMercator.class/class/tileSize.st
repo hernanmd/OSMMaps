@@ -1,4 +1,5 @@
-accessing
+constants
 tileSize
-	"This is the most common tile size."
-	^256
+	"Answer the standard tile size in pixels. Answer an Integer"
+
+	^ 256
